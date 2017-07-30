@@ -1,6 +1,6 @@
 .idea
+.sass-cache
 node_modules
 npm-debug.log
-.sass-cache
 index.html
-dist
+dist/

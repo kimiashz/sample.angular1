@@ -1,0 +1,3 @@
+window.Application = {
+    version: '@@VERSION'
+};
