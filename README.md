@@ -1,1 +1,1 @@
-sample readme
+# angular 1 : new example project
