@@ -4,4 +4,4 @@ window.application = {
     version: '@@VERSION'
 };
 
-var sampleApp = angular.module('sampleApp', ['ngRoute', 'ngMaterial']);
+var sampleApp = angular.module('sampleApp', ['ngRoute', 'ngMaterial', 'ngAria']);

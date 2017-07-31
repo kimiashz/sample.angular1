@@ -129,7 +129,6 @@ module.exports = function (grunt) {
 	// LOAD GRUNT PLUGINS ========================================================
 	// ===========================================================================
 	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-include-source');
 	grunt.loadNpmTasks('grunt-replace');
