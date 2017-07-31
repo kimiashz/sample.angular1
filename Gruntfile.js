@@ -81,7 +81,7 @@ module.exports = function (grunt) {
 				'dist/app.js'
 			],
 			styles:  [
-				'dist/lib.css',
+				'dist/modules.css',
 				'dist/app.css'
 			]
 		},

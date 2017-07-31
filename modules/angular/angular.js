@@ -113,7 +113,6 @@ function minErr(module, ErrorConstructor) {
       message += paramPrefix + 'p' + i + '=' + encodeURIComponent(templateArgs[i]);
     }
 
-    console.log(message);
     return new ErrorConstructor(message);
   };
 }

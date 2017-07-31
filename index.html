@@ -5,6 +5,7 @@
     <title>AngularJS - Sample Project</title>
     <!-- !DO NOT EDIT! auto-generated includes, see Gruntfile.js -->
     <!-- include: "type": "css", "files": "<%= app.styles %>" -->
+    <link href="dist/modules.css" rel="stylesheet" type="text/css">
     <link href="dist/app.css" rel="stylesheet" type="text/css">
     <!-- /include -->
     <!-- endbuild -->
@@ -24,6 +25,7 @@
                 <md-list-item ng-repeat="phone in phones">
                     <span>{{phone.name}}</span>
                     <p>{{phone.snippet}}</p>
+                    <md-button class="md-raised md-warn">Warn</md-button>
                 </md-list-item>
             </md-list>
 
