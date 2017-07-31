@@ -1,6 +1,6 @@
 /* sample angular project - controllers js */
 
-window.sampleApp
+sampleApp
     .controller('PhoneController', function ($scope) {
         $scope.phones = [
             {
