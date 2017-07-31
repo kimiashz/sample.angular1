@@ -20,12 +20,9 @@ module.exports = function (grunt) {
 		concat: {
 			libjs:  {
 				src:  [
-					'modules/jquery/jquery.min.js',
-					'modules/angular/angular.min.js',
-					'modules/angular-material/angular-material.min.js',
-					'modules/angular-libs/*.js',
-					'modules/angular-animate/*.js',
-					'modules/angular-aria/*.js'
+					'modules/jquery/jquery.js',
+					'modules/angular/angular.js',
+					'modules/**/*.js'
 				],
 				dest: 'dist/modules.js'
 			},

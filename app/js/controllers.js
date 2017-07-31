@@ -7,7 +7,7 @@ sampleApp
                 name: 'Nexus S',
                 snippet: 'Fast just got faster with Nexus S.'
             }, {
-                name: 'Motorola XOOM with Wi-Fi',
+                name: 'SAMSUNG Galaxy s8 plus',
                 snippet: 'The Next, Next Generation tablet.'
             }, {
                 name: 'MOTOROLA XOOM',
