@@ -10,20 +10,30 @@
     <!-- endbuild -->
 </head>
 <body ng-app="sampleApp">
+<ng-view>
+    <md-toolbar class="md-warn">
+        <div class="md-toolbar-tools">
+            <h3 class="md-flex">sample angular 1 project</h3>
+        </div>
+    </md-toolbar>
     <ng-content>
-        <ng-list>
-            <ng-item>item</ng-item>
-            <ng-item>item</ng-item>
-            <ng-item>item</ng-item>
-            <ng-item>item</ng-item>
-            <ng-item>item</ng-item>
-            <ng-item>item</ng-item>
-        </ng-list>
+        <md-card class="page" ng-controller="PhoneController">
+
+            <md-list flex>
+                <md-subheader class="md-no-sticky">Mobile Phone List :</md-subheader>
+                <md-list-item ng-repeat="phone in phones">
+                    <span>{{phone.name}}</span>
+                    <p>{{phone.snippet}}</p>
+                </md-list-item>
+            </md-list>
+
+        </md-card>
     </ng-content>
-    <!-- !DO NOT EDIT! auto-generated includes, see Gruntfile.js -->
-    <!-- include: "type": "js", "files": "<%= app.scripts %>" -->
-    <!-- source files will be injected here -->
-    <!-- /include -->
-    <!-- endbuild -->
+</ng-view>
+<!-- !DO NOT EDIT! auto-generated includes, see Gruntfile.js -->
+<!-- include: "type": "js", "files": "<%= app.scripts %>" -->
+<!-- source files will be injected here -->
+<!-- /include -->
+<!-- endbuild -->
 </body>
 </html>

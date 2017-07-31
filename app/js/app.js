@@ -1,5 +1,7 @@
+/* sample angular project - application js */
+
 window.application = {
     version: '@@VERSION'
 };
 
-angular.module('sampleApp', []);
+var sampleApp = angular.module('sampleApp', []);
