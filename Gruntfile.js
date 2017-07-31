@@ -9,7 +9,7 @@ module.exports = function (grunt) {
 		connect: {
 			server: {
 				options: {
-					base:       './app',
+					base:       './',
 					port:       8004,
 					debug:      true,
 					open:       true
@@ -85,13 +85,13 @@ module.exports = function (grunt) {
 		},
 		includeSource: {
 			options: {
-				basePath: './app/',
+				basePath: './',
 				baseUrl:  '',
 				ordering: 'top-down'
 			},
 			app:     {
 				files: {
-					'./app/index.html': './app/index.template.html'
+					'./index.html': './index.template.html'
 				}
 			}
 		},
