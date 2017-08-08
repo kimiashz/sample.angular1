@@ -28,6 +28,7 @@ module.exports = function (grunt) {
 			},
 			js:     {
 				src:  [
+					'app/js/app.js',
 					'app/js/*.js'
 				],
 				dest: 'dist/app.js'
@@ -76,7 +77,6 @@ module.exports = function (grunt) {
 
 		app:           {
 			scripts: [
-				'dist/config.js',
 				'dist/modules.js',
 				'dist/app.js'
 			],
@@ -95,17 +95,6 @@ module.exports = function (grunt) {
 				files: {
 					'./index.html': './index.template.html'
 				}
-			}
-		},
-
-		copy: {
-			main: {
-				files: [
-					{
-						src: ['app/js/config.js'],
-						dest: 'dist/config.js'
-					}
-				]
 			}
 		},
 
@@ -132,7 +121,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-include-source');
 	grunt.loadNpmTasks('grunt-replace');
-	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
@@ -140,6 +128,6 @@ module.exports = function (grunt) {
 	// ===========================================================================
 	// Define GRUNT Commands =====================================================
 	// ===========================================================================
-	grunt.registerTask('develop', ['concat', 'copy', 'sass', 'includeSource', 'replace']);
+	grunt.registerTask('develop', ['concat', 'sass', 'includeSource', 'replace']);
 	grunt.registerTask('sample-app', ['develop', 'connect', 'watch']);
 };
