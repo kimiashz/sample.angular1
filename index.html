@@ -14,23 +14,54 @@
 <div>
     <md-toolbar class="md-warn">
         <div class="md-toolbar-tools">
-            <h3 class="md-flex">sample angular 1 project</h3>
+            <h3 class="md-flex">sample angular 1 project - todoMVC</h3>
         </div>
     </md-toolbar>
-    <ng-content>
-        <md-card class="page" ng-controller="PhoneController">
+       <ng-view></ng-view>
 
-            <md-list flex>
-                <md-subheader class="md-no-sticky">Mobile Phone List :</md-subheader>
-                <md-list-item ng-repeat="phone in phones">
-                    <span>{{phone.name}}</span>
-                    <p>{{phone.snippet}}</p>
-                    <md-button class="md-raised md-warn">Warn</md-button>
-                </md-list-item>
-            </md-list>
-
-        </md-card>
-    </ng-content>
+		<script type="text/ng-template" id="todomvc-index.html">
+			<section>
+				<header id="header">
+					<h1>todos</h1>
+					<form id="todo-form" ng-submit="addTodo()">
+						<input id="new-todo" placeholder="What needs to be done?" ng-model="newTodo" ng-disabled="saving" autofocus>
+					</form>
+				</header>
+				<section id="main" ng-show="todos.length" ng-cloak>
+					<input id="toggle-all" type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
+					<label for="toggle-all">Mark all as complete</label>
+					<ul id="todo-list">
+						<li ng-repeat="todo in todos | filter:statusFilter track by $index" ng-class="{completed: todo.completed, editing: todo == editedTodo}">
+							<div class="view">
+								<input class="toggle" type="checkbox" ng-model="todo.completed" ng-change="toggleCompleted(todo)">
+								<label ng-dblclick="editTodo(todo)">{{todo.title}}</label>
+								<button class="destroy" ng-click="removeTodo(todo)"></button>
+							</div>
+							<form ng-submit="saveEdits(todo, 'submit')">
+								<input class="edit" ng-trim="false" ng-model="todo.title" todo-escape="revertEdits(todo)" ng-blur="saveEdits(todo, 'blur')" todo-focus="todo == editedTodo">
+							</form>
+						</li>
+					</ul>
+				</section>
+				<footer id="footer" ng-show="todos.length" ng-cloak>
+					<span id="todo-count"><strong>{{remainingCount}}</strong>
+						<ng-pluralize count="remainingCount" when="{ one: 'item left', other: 'items left' }"></ng-pluralize>
+					</span>
+					<ul id="filters">
+						<li>
+							<a ng-class="{selected: status == ''} " href="#/">All</a>
+						</li>
+						<li>
+							<a ng-class="{selected: status == 'active'}" href="#/active">Active</a>
+						</li>
+						<li>
+							<a ng-class="{selected: status == 'completed'}" href="#/completed">Completed</a>
+						</li>
+					</ul>
+					<button id="clear-completed" ng-click="clearCompletedTodos()" ng-show="completedCount">Clear completed</button>
+				</footer>
+			</section>
+		</script>
 </div>
 <!-- !DO NOT EDIT! auto-generated includes, see Gruntfile.js -->
 <!-- include: "type": "js", "files": "<%= app.scripts %>" -->
