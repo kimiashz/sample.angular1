@@ -1,2 +1,3 @@
+/* sample angular project - filters js */
 
-sampleApp.filter('tel', function (){});
+sampleApp.filter('todoFilter', function (){});
